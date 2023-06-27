@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+    <style>
+      .swiper {
+        height: 150px;
+        width: 100%;
+        background-color: #ff9800;
+        display: linear;
+      }
+
+      .swiper-slide {
+        height: 100%;
+        border: 5px solid black;
+        background-color: #1890ff;
+        box-sizing: border-box;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  </head>
+  <body>
+    <!-- Slider main container -->
+    <div class="swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+        ...
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
+
+    <script>
+      const swiper = new Swiper(".swiper", {
+        // Optional parameters
+        loop: true,
+
+        effect: "coverflow",
+
+        // If we need pagination
+        pagination: {
+          el: ".swiper-pagination",
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+
+        width: 300,
+
+        // And if we need scrollbar
+        scrollbar: {
+          el: ".swiper-scrollbar",
+        },
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          scale: 1,
+          modifier: 1,
+          slideShadows: false,
+        },
+      });
+    </script>
+  </body>
+</html>
